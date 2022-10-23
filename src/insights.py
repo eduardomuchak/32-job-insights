@@ -29,26 +29,18 @@ def get_max_salary(path):
     content = read(path)
     max_salary = []
     for job in content:
-        max_salary.append(int(job["max_salary"]))
+        if job["max_salary"].isDigit():
+            max_salary.append(int(job["max_salary"]))
     return max(max_salary)
 
 
 def get_min_salary(path):
-    """Get the minimum salary of all jobs
-
-    Must call `read`
-
-    Parameters
-    ----------
-    path : str
-        Must be passed to `read`
-
-    Returns
-    -------
-    int
-        The minimum salary paid out of all job opportunities
-    """
-    pass
+    content = read(path)
+    min_salary = []
+    for job in content:
+        if job["min_salary"].isDigit():
+            min_salary.append(int(job["min_salary"]))
+    return min(min_salary)
 
 
 def matches_salary_range(job, salary):
