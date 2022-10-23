@@ -27,11 +27,10 @@ def filter_by_industry(jobs, industry):
 
 def get_max_salary(path):
     content = read(path)
-    max_salary = 0
+    max_salary = []
     for job in content:
-        if job["max_salary"] > max_salary:
-            max_salary = job["max_salary"]
-    return max_salary
+        max_salary.append(int(job["max_salary"]))
+    return max(max_salary)
 
 
 def get_min_salary(path):
