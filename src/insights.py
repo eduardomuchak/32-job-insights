@@ -17,7 +17,8 @@ def get_unique_industries(path):
     content = read(path)
     industries = set()
     for job in content:
-        industries.add(job["industry"])
+        if job["industry"] != "":
+            industries.add(job["industry"])
     return industries
 
 
