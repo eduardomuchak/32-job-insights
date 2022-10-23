@@ -30,7 +30,7 @@ def get_max_salary(path):
     content = read(path)
     max_salary = []
     for job in content:
-        if job["max_salary"].isDigit():
+        if job["max_salary"].isdigit():
             max_salary.append(int(job["max_salary"]))
     return max(max_salary)
 
@@ -39,7 +39,7 @@ def get_min_salary(path):
     content = read(path)
     min_salary = []
     for job in content:
-        if job["min_salary"].isDigit():
+        if job["min_salary"].isdigit():
             min_salary.append(int(job["min_salary"]))
     return min(min_salary)
 
