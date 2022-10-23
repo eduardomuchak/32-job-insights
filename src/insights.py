@@ -29,8 +29,8 @@ def get_max_salary(path):
     content = read(path)
     max_salary = 0
     for job in content:
-        if job["salary"] > max_salary:
-            max_salary = job["salary"]
+        if job["max_salary"] > max_salary:
+            max_salary = job["max_salary"]
     return max_salary
 
 
