@@ -48,8 +48,8 @@ def matches_salary_range(job, salary):
     if "min_salary" not in job or "max_salary" not in job:
         raise ValueError("Job does not have min_salary or max_salary")
 
-    is_min_salary_a_integer = job["min_salary"].isdigit()
-    is_max_salary_a_integer = job["max_salary"].isdigit()
+    is_min_salary_a_integer = type(job["min_salary"]) is int
+    is_max_salary_a_integer = type(job["max_salary"]) is int
 
     if not is_min_salary_a_integer or not is_max_salary_a_integer:
         raise ValueError("Job does not have min_salary or max_salary")
